@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Mongo.Services.CouponAPI.props" />
+</Project>
