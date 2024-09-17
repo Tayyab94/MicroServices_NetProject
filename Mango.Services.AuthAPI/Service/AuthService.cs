@@ -3,6 +3,7 @@ using Mango.Services.AuthAPI.Models;
 using Mango.Services.AuthAPI.Models.Dto;
 using Mango.Services.AuthAPI.Service.IService;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Mango.Services.AuthAPI.Service
 {
@@ -38,9 +39,37 @@ namespace Mango.Services.AuthAPI.Service
             }
             return false;
         }
-        public Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto)
+        public async Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto)
         {
-            throw new NotImplementedException();
+            var user = await _db.ApplicationUsers.FirstOrDefaultAsync(s => s.UserName.ToLower().Equals(loginRequestDto.UserName.ToLower()));
+            bool isValid = false;
+            if(user is not null)
+            {
+                is‎Valid= await _userManager.CheckPasswordAsync(user,loginRequestDto.Password);
+               
+            }
+
+            if(user is null || isValid==false) {
+                return new LoginResponseDto() { User = null, Token = "" };
+            }
+            var role = await _userManager.GetRolesAsync(user);
+            var token = _jwtTokenGenerator.GenerateToken(user, role);
+
+            UserDto userDTO = new()
+            {
+                Email = user.Email,
+                ID = user.Id,
+                Name = user.Name,
+                PhoneNumber = user.PhoneNumber
+            };
+            LoginResponseDto loginResponseDto = new LoginResponseDto()
+            {
+                User = userDTO,
+                Token = token
+            };
+
+            return loginResponseDto;
+
         }
 
         public async Task<string> Register(RegistrationRequestDto registrationRequestDto)

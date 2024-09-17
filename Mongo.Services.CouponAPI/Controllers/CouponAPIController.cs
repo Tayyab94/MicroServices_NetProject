@@ -27,7 +27,6 @@ namespace Mongo.Services.CouponAPI.Controllers
             _response = new ResponseDto();
         }
 
-
         [HttpGet]
         public ResponseDto Get()
         {
@@ -44,7 +43,8 @@ namespace Mongo.Services.CouponAPI.Controllers
             return _response;
         }
 
-
+        //[Authorize(Roles = "CUSTOMER")]
+        [Authorize(Roles = "CUSTOMER")]
         [HttpGet]
         [Route("{id:int}")]
         public ResponseDto Get(int id)
@@ -78,6 +78,7 @@ namespace Mongo.Services.CouponAPI.Controllers
             return _response;
         }
 
+        [Authorize]
         [HttpPost]
         public ResponseDto Post([FromBody] CouponDto couponDto)
         {
@@ -110,7 +111,7 @@ namespace Mongo.Services.CouponAPI.Controllers
             return _response;
         }
 
-
+        [Authorize]
         [HttpPut]
         //[Authorize(Roles = "ADMIN")]
         public ResponseDto Put([FromBody] CouponDto couponDto)

@@ -20,8 +20,7 @@ namespace Mango.Services.AuthAPI.Service
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
-            var key = Encoding.UTF8.GetBytes(_jwtOptions.Secret);
-
+            var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
             var claimList = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Email,applicationUser.Email),
@@ -35,6 +34,7 @@ namespace Mango.Services.AuthAPI.Service
             {
                 Audience = _jwtOptions.Audience,
                 Issuer = _jwtOptions.Issure,
+                //Issuer= "mango-auth-api",
                 Subject = new ClaimsIdentity(claimList),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
