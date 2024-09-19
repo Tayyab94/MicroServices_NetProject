@@ -24,7 +24,7 @@ namespace Mongo.Web.Service
                 HttpClient client = _httpClientFactory.CreateClient("MongoAPI");
                 HttpRequestMessage message = new();
 
-                if(requestDto.contentType== Utility.SD.ContentType.MultipartFormData)
+                if(requestDto.ContentType== Utility.SD.ContentType.MultipartFormData)
                 {
                     message.Headers.Add("Accpet", "*/*");
                 }

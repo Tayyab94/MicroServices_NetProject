@@ -17,6 +17,8 @@ namespace Mongo.Services.CouponAPI.Extensions
             var audience = settingsSection.GetValue<string>("Audience");
 
             var key = Encoding.ASCII.GetBytes(secret);
+
+            // We can use UTF8 Encoding as well.. 
             //var key = Encoding.UTF8.GetBytes(secret);
 
             builder.Services.AddAuthentication(x =>
@@ -25,7 +27,7 @@ namespace Mongo.Services.CouponAPI.Extensions
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(b =>
             {
-                b.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                b.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),

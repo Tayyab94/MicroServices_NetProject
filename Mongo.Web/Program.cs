@@ -16,6 +16,7 @@ builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ICouponService, CouponService>();
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 // binding the configuration
 SD.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
 SD.OrderAPIBase = builder.Configuration["ServiceUrls:OrderAPI"];

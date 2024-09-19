@@ -231,3 +231,4 @@ C:\Users\tayya\source\Repos\Mango\Mongo.Web\bin\Debug\net8.0\Microsoft.IdentityM
 C:\Users\tayya\source\Repos\Mango\Mongo.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\tayya\source\Repos\Mango\Mongo.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\tayya\source\Repos\Mango\Mongo.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\tayya\source\Repos\Mango\Mongo.Web\obj\Debug\net8.0\Mongo.Web.sourcelink.json

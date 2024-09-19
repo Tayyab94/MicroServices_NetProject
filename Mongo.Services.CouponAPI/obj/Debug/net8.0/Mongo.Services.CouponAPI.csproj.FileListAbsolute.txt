@@ -140,3 +140,4 @@ C:\Users\tayya\source\Repos\Mango\Mongo.Services.CouponAPI\obj\Debug\net8.0\refi
 C:\Users\tayya\source\Repos\Mango\Mongo.Services.CouponAPI\obj\Debug\net8.0\Mongo.Services.CouponAPI.pdb
 C:\Users\tayya\source\Repos\Mango\Mongo.Services.CouponAPI\obj\Debug\net8.0\Mongo.Services.CouponAPI.genruntimeconfig.cache
 C:\Users\tayya\source\Repos\Mango\Mongo.Services.CouponAPI\obj\Debug\net8.0\ref\Mongo.Services.CouponAPI.dll
+C:\Users\tayya\source\Repos\Mango\Mongo.Services.CouponAPI\obj\Debug\net8.0\Mongo.Services.CouponAPI.sourcelink.json

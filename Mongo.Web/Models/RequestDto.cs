@@ -11,6 +11,6 @@ namespace Mongo.Web.Models
         public object Data { get; set; }
         public string AccessToken { get; set; }
 
-        public Utility.SD.ContentType contentType { get; set; } = Utility.SD.ContentType.Json;
+        public Utility.SD.ContentType ContentType { get; set; } = Utility.SD.ContentType.Json;
     }
 }
